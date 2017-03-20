@@ -14,23 +14,21 @@ public class ChangementTexture : MonoBehaviour
     void Start()
     {
        
+    }
+
+
+    void appliquerTexture()
+    {
         typeChangementTexture = new ChangementTextureRandom();
         newMat = typeChangementTexture.getMat(textureFolderPath);
         foreach (GameObject obj in models)
         {
-            appliquerTexture(newMat,obj);
+            try
+            {
+                obj.GetComponent<MeshRenderer>().material = newMat;
+            }
+            catch (MissingComponentException)
+            { }
         }
-
-    }
-
-
-    void appliquerTexture(Material mat, GameObject obj)
-    {
-        try
-        {
-            obj.GetComponent<MeshRenderer>().material = mat;
-        }
-        catch (MissingComponentException)
-        {}
     }
 }

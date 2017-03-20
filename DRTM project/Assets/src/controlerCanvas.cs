@@ -7,12 +7,23 @@ public class controlerCanvas : MonoBehaviour {
 
 
     public Button selectFileButton;
-    public Button passTo2DButton;   
+    public Button passTo2DButton;
+    public Button RandomTexture;
+    public GameObject model; 
 
     void Start()
     {
-        selectFileButton.onClick.AddListener(launchSelectFile);
-        passTo2DButton.onClick.AddListener(launch2D);
+        if(selectFileButton != null)
+            selectFileButton.onClick.AddListener(launchSelectFile);
+        if(passTo2DButton != null)
+            passTo2DButton.onClick.AddListener(launch2D);
+        if (RandomTexture != null && model != null)
+            RandomTexture.onClick.AddListener(changerTexture);
+    }
+
+    void changerTexture()
+    {
+        this.model.SendMessage("appliquerTexture");
     }
 
     void launchSelectFile()
