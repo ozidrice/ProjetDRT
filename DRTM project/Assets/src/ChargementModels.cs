@@ -48,5 +48,6 @@ public class ChargementModels : MonoBehaviour {
 		clone.transform.position = new Vector3 (350f, -850f, 342f);
 		clone.transform.Rotate(new Vector3 (0f, 180f, 0f));
 		clone.transform.localScale = new Vector3 (600f, 600f, 300f);
+		DontDestroyOnLoad(clone);
 	}
 }
