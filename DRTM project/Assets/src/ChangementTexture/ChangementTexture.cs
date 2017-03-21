@@ -16,7 +16,7 @@ public class ChangementTexture : MonoBehaviour
     }
 
 
-    void appliquerTexture()
+    public void appliquerTexture()
     {
 		GameObject go = GameObject.Find ("modele");
 		Component[] models = go.gameObject.GetComponentsInChildren<Component>();

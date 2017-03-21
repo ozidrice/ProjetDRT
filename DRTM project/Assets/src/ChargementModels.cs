@@ -45,9 +45,9 @@ public class ChargementModels : MonoBehaviour {
 		Object prefab = AssetDatabase.LoadAssetAtPath(modele, typeof(GameObject));
 		GameObject clone = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
 		clone.name = "modele";
-		clone.transform.position = new Vector3 (350f, -850f, 342f);
+		clone.transform.position = new Vector3 (250f, -1500f, 342f);
 		clone.transform.Rotate(new Vector3 (0f, 180f, 0f));
-		clone.transform.localScale = new Vector3 (600f, 600f, 300f);
+		clone.transform.localScale = new Vector3 (1000f, 1000f, 1000f);
 		DontDestroyOnLoad(clone);
 	}
 }

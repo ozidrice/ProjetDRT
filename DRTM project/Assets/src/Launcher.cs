@@ -16,7 +16,7 @@ public class Launcher : MonoBehaviour {
 	}
 
 	public void launch1_SelectionnerUnFichier2(){
-		SceneManager.LoadScene ("2.Confirmation du modèle", LoadSceneMode.Single);
+		SceneManager.LoadScene ("2.Texture", LoadSceneMode.Single);
 	}
 
 	public void launchScene2_boutonPrecedent_Scene1(){
@@ -24,7 +24,7 @@ public class Launcher : MonoBehaviour {
 	}
 
 	public void launchScene2_boutonAppliquerTexture_Scene3(){
-		SceneManager.LoadScene ("3.Texture Appliquée", LoadSceneMode.Single);
+		SceneManager.LoadScene ("3.Deformation 3D", LoadSceneMode.Single);
 	}
 
 	public void launch2_AppliquerToutAlaFois_5(){
@@ -32,19 +32,19 @@ public class Launcher : MonoBehaviour {
 	}
 
 	public void launch3_Precedent_2(){
-		SceneManager.LoadScene ("2.Confirmation du modèle", LoadSceneMode.Single);
+		SceneManager.LoadScene ("2.Texture", LoadSceneMode.Single);
 	}
 
 	public void launch3_Deformation_4(){
-		SceneManager.LoadScene ("4.Déformation appliquée", LoadSceneMode.Single);
+		SceneManager.LoadScene ("4.Switch 2D", LoadSceneMode.Single);
 	}
 
 	public void launch3_DL(){
-		SceneManager.LoadScene ("3.Texture Appliquée", LoadSceneMode.Single);
+		SceneManager.LoadScene ("3.Deformation 3D", LoadSceneMode.Single);
 	}
 
 	public void launch4_Precedent_3(){
-		SceneManager.LoadScene ("3.Texture Appliquée", LoadSceneMode.Single);
+		SceneManager.LoadScene ("3.Deformation 3D", LoadSceneMode.Single);
 	}
 
 	public void launch4_DeLa3DVersLa2D_5(){
@@ -52,7 +52,7 @@ public class Launcher : MonoBehaviour {
 	}
 
 	public void launch4_DL(){
-		SceneManager.LoadScene ("4.Déformation appliquée", LoadSceneMode.Single);
+		SceneManager.LoadScene ("4.Switch 2D", LoadSceneMode.Single);
 	}
 	public void launch5_RetournerAlAccueil_1(){
 		SceneManager.LoadScene ("1.Sélection du modèle", LoadSceneMode.Single);
