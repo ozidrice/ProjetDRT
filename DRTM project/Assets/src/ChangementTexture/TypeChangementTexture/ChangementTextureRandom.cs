@@ -5,21 +5,24 @@ using UnityEditor;
 using UnityEngine;
 
 public class ChangementTextureRandom : ChangementTextureInterface {
+	string pathToMaterials;
 
-    public Material getMat(string pathToMaterials)
+	public ChangementTextureRandom(string pathToMaterials){
+		this.pathToMaterials = pathToMaterials;
+	}
+
+    public Material getMat()
     {
-        List<string> listTexturePath = new List<string>();
-        foreach (string file in System.IO.Directory.GetFiles(pathToMaterials))
-        {
-            if (file.EndsWith(".mat"))
-            {
-                listTexturePath.Add(file);
-                Debug.Log("Texture trouvée:" + file);
-            }
-        }
+		FileTree mainTree = new FileTree (pathToMaterials.TrimStart(pathToMaterials.ToCharArray()), pathToMaterials);
+		List<string> listTexturePath = mainTree.getPaths();
+		for(int i = 0; i<listTexturePath.Count; i++) {
+			if (!listTexturePath[i].EndsWith (".mat")) {
+				listTexturePath.RemoveAt(i);
+				i--;
+			}
+		}
         int randomInt = Mathf.RoundToInt((listTexturePath.Count - 1) * UnityEngine.Random.value);
-        Debug.Log(listTexturePath.Count + " rand:" + randomInt);
-
         return (Material)AssetDatabase.LoadAssetAtPath(listTexturePath[randomInt], typeof(Material));
    }
+
 }

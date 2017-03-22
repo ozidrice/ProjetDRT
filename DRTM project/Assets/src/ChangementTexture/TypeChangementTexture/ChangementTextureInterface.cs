@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface ChangementTextureInterface {
-    Material getMat(string pathToMaterials);
+    Material getMat();
 }

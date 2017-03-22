@@ -5,15 +5,21 @@ using UnityEngine.UI;
 
 public class ChangementTexture : MonoBehaviour
 {
-	public Button button;
-	public ChangementTextureInterface typeChangementTexture;
+
+	public static ChangementTextureInterface typeChangementTexture;
     public string textureFolderPath;
     private Material newMat;
 
-    void Start()
-    {
-		button.onClick.AddListener(appliquerTexture);
-    }
+	public void setRandom(){
+		typeChangementTexture = new ChangementTextureRandom(textureFolderPath);
+	}
+
+	public void setTypeChangementTexture(ChangementTextureInterface changeText){
+		typeChangementTexture = changeText;
+
+	}
+
+	public void ok(){}
 
 
     public void appliquerTexture()
@@ -25,8 +31,8 @@ public class ChangementTexture : MonoBehaviour
 			Debug.Log ("model introuvable");
 		}
 		if(typeChangementTexture == null) 
-        	typeChangementTexture = new ChangementTextureRandom();
-        newMat = typeChangementTexture.getMat(textureFolderPath);
+			typeChangementTexture = new ChangementTextureRandom(textureFolderPath);
+        newMat = typeChangementTexture.getMat();
 		foreach (Component obj in models)
         {
             try
