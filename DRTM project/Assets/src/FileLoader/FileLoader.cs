@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +16,7 @@ public class FileLoader : MonoBehaviour
     void filePanelOnClick()
     {
         Debug.Log("clicked");
-        this.path = EditorUtility.OpenFilePanel("Select a file","","fbx");
+        //this.path = EditorUtility.OpenFilePanel("Select a file","","fbx");
         if (path.Length == 0)
             this.path = NOFILESTRING;
         filePathText.text = this.path;

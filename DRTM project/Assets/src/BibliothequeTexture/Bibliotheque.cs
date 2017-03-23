@@ -34,28 +34,33 @@ public class Bibliotheque : MonoBehaviour {
 		int tab=0;
 
 		foreach (string path in listTexturePath) {
-			
+			int j = 0;
 			string[] newCat = path.TrimStart ((pathToMaterials + "\\").ToCharArray ()).Split ("\\".ToCharArray(),200);
-			Debug.Log (afficherContenu(newCat) + "\n -" + afficherContenu(CategorieTexture));
-			if (!comparer (newCat, CategorieTexture)) {
-				CategorieTexture = newCat;
-				for (int i = 0; i < CategorieTexture.Length - 1; i++) {
-					tab = i * 20 + 20; //px 
-					Text typeElem = creerText ("type",
-						                CategorieTexture [i],
-						                new Vector3 (tab, y, 0),
-						                new Vector2 (290, 20),
-						                contentElement,
-						                FontStyle.BoldAndItalic);
-					y -= typeElem.rectTransform.sizeDelta.y;
-
+			try{
+				while(CategorieTexture[j] == newCat[j]){
+				j++;
 				}
+			}catch(System.IndexOutOfRangeException){
+
+			}
+			CategorieTexture = newCat;
+			for (int i = j ; i < CategorieTexture.Length - 1; i++) {
+				tab = i * 20 + 20; //px 
+				Text typeElem = creerText ("type",
+					                CategorieTexture [i],
+					                new Vector3 (tab, y, 0),
+					                new Vector2 (290, 20),
+					                contentElement,
+					                FontStyle.BoldAndItalic);
+				y -= typeElem.rectTransform.sizeDelta.y;
+
+
 			}
 
 
 			Text textElem = creerText("texture",
 				newCat[newCat.Length-1].TrimEnd(".mat".ToCharArray()),
-				new Vector3 (tab, y, 0),
+				new Vector3 (tab+20, y, 0),
 				new Vector2 (290, 20),
 				contentElement,
 				FontStyle.Normal);
@@ -90,17 +95,7 @@ public class Bibliotheque : MonoBehaviour {
 		UIText.rectTransform.sizeDelta = size;
 		return UIText;
 	}
-
-
-	void testButton(){
-		string s = "";
-		Debug.Log ("Clicked ! (" + s + ")");
-	}
-	// Update is called once per frame
-	void Update () {
-
-	}
-
+			
 	static bool comparer(string[] s1, string[] s2){
 		if (s1.Length != s2.Length)
 			return false;

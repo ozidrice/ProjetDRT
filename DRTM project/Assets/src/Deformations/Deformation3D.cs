@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Deformation3D : MonoBehaviour {
 
-	Vector3[] newVertices;
+	List<Vector3> newVertices=new List<Vector3>();
 	Vector2[] newUV;
 	int[] newTriangles;
+
 
 	public void deformer() {
 		/*
@@ -30,21 +31,34 @@ public class Deformation3D : MonoBehaviour {
 		//mesh.triangles = newTriangles;
 		*/
 
-		GameObject go = GameObject.Find ("modele");
+		/*_________________________________________*/
+		/*GameObject go = GameObject.Find ("modele");
 		MeshFilter[] childs = go.GetComponentsInChildren<MeshFilter>(false);
 		foreach (MeshFilter mf in childs) {
 			Mesh mesh = mf.mesh;
 			newVertices = mesh.vertices;
 			Debug.Log(newVertices.Length);
 			for(int i = 0; i<newVertices.Length; i++){
-				if(i%100 == 0){
+				if(i%1 == 0){
 					//for (int j = i; j < i + 20; j++) {
-						newVertices [i] *= 2.2f;
+					newVertices [i] *= 1.5f * Mathf.Cos(Random.value);
 					//}
 				}
 			}
-			mesh.vertices = newVertices;
+			mesh.vertices = newVertices;*/
+
+		GameObject go = GameObject.Find ("modele");
+		MeshFilter[] childs = go.GetComponentsInChildren<MeshFilter>(false);
+
+		foreach (MeshFilter mf in childs) {
+
+			Mesh mesh = mf.mesh;
+			newVertices.AddRange(mesh.vertices);
+			Debug.Log(newVertices.Count);
+			newVertices.Sort ((Vector3 x, Vector3 y) => x.x.CompareTo(y.x));
+			childs[0].mesh.vertices = newVertices.GetRange(0,newVertices.Count/2).ToArray();
 		}
+
 	}
 		
 
