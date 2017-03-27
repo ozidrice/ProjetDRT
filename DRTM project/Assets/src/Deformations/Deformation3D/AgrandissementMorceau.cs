@@ -6,7 +6,8 @@ public class AgrandissementMorceau : DeformationAbstract{
 	override public void deformer(){
 		GameObject go = GameObject.Find ("modele");
 		MeshFilter[] childs = go.GetComponentsInChildren<MeshFilter>(false);
-		Vector3 vRef = childs[1].mesh.vertices[Mathf.RoundToInt(Random.value*childs [0].mesh.vertices.Length)];
+		MeshFilter child = childs[Mathf.RoundToInt (Random.value * childs.Length)];
+		Vector3 vRef = child.mesh.vertices[Mathf.RoundToInt(Random.value*child.mesh.vertices.Length)];
 
 		foreach (MeshFilter mf in childs) {
 			Mesh mesh = mf.mesh;

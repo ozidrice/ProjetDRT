@@ -43,4 +43,24 @@ public class ChangementTexture : MonoBehaviour
             { }
         }
     }
+	
+	public void appliquerDoubleTexture() {
+		GameObject model = GameObject.Find("modeleDoubleTexture");
+		Component[] meshs = model.gameObject.GetComponentsInChildren<MeshFilter>();
+
+		if (model == null) {
+			Debug.Log ("model introuvable");
+		}
+
+		foreach (Component obj in meshs) {
+			if (obj.GetComponent<MeshFilter>() == true)
+			try
+			{
+				typeChangementTexture = new ChangementTextureRandom(textureFolderPath);
+				obj.GetComponent<MeshRenderer>().material = typeChangementTexture.getMat();
+			}
+			catch (MissingComponentException)
+			{ }
+		}
+	}
 }

@@ -14,16 +14,19 @@ public class Launcher : MonoBehaviour {
 	void Update () {
 		
 	}
+	public void launch0_Commencer_1(){
+		SceneManager.LoadScene ("1.Sélection du modèle", LoadSceneMode.Single);
+	}
 
 	public void launch1_SelectionnerUnFichier2(){
 		SceneManager.LoadScene ("2.Texture", LoadSceneMode.Single);
 	}
 
-	public void launchScene2_boutonPrecedent_Scene1(){
+	public void launch2_boutonPrecedent_Scene1(){
 		SceneManager.LoadScene ("1.Sélection du modèle", LoadSceneMode.Single);
 	}
 
-	public void launchScene2_boutonAppliquerTexture_Scene3(){
+	public void launch2_boutonAppliquerTexture_Scene3(){
 		SceneManager.LoadScene ("3.Deformation 3D", LoadSceneMode.Single);
 	}
 
