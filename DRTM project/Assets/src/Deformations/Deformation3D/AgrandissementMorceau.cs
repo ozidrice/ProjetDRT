@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deformation3D : DeformationAbstract{
+public class AgrandissementMorceau : DeformationAbstract{
 	override public void deformer(){
 		GameObject go = GameObject.Find ("modele");
 		MeshFilter[] childs = go.GetComponentsInChildren<MeshFilter>(false);

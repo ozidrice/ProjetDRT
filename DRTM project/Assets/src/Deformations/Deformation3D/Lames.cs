@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deformation3D : DeformationAbstract{
+public class Lames : DeformationAbstract{
 	override public void deformer(){
 		GameObject go = GameObject.Find ("modele");
 		MeshFilter[] childs = go.GetComponentsInChildren<MeshFilter>(false);
@@ -12,9 +12,9 @@ public class Deformation3D : DeformationAbstract{
 			Mesh mesh = mf.mesh;
 			newVertices.AddRange( mesh.vertices );
 			for(int i = 0; i<newVertices.Count; i++){
-				float marge = 0.032f;
+				float marge = 0.015f;
 				if(estAProximité(marge, vRef,newVertices[i])){
-					newVertices [i] = calculerVecteur(vRef,marge,2f,newVertices[i]);
+					newVertices [i] = calculerVecteur(vRef,marge,2.2f,newVertices[i]);
 				}
 			}
 			mesh.vertices = newVertices.ToArray();
@@ -24,7 +24,7 @@ public class Deformation3D : DeformationAbstract{
 
 	static Vector3 calculerVecteur(Vector3 center, float rayon, float hauteurEnSonCentre, Vector3 vecteurCible){
 		float distanceDuCentre = Vector3.Distance (center, vecteurCible);
-		float hauteur = hauteurEnSonCentre*1+(rayon-distanceDuCentre); 
+		float hauteur = hauteurEnSonCentre*(1-(distanceDuCentre/rayon)); 
 		return vecteurCible * hauteur;
 	}
 	static bool estAProximité(float marge, Vector3 v1, Vector3 v2){

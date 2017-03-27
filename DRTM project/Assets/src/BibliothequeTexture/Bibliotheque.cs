@@ -37,27 +37,26 @@ public class Bibliotheque : MonoBehaviour {
 			int j = 0;
 			string[] newCat = path.TrimStart ((pathToMaterials + "\\").ToCharArray ()).Split ("\\".ToCharArray(),200);
 			try{
+				//Tant que la catégorie est la meme que celle de l'elem d'avant
 				while(CategorieTexture[j] == newCat[j]){
 				j++;
 				}
-			}catch(System.IndexOutOfRangeException){
+			}catch(System.IndexOutOfRangeException){}
 
-			}
 			CategorieTexture = newCat;
 			for (int i = j ; i < CategorieTexture.Length - 1; i++) {
 				tab = i * 20 + 20; //px 
-				Text typeElem = creerText ("type",
+				//Creation des élément de categorie
+				Text typeElem = creerText ("categorie",
 					                CategorieTexture [i],
 					                new Vector3 (tab, y, 0),
 					                new Vector2 (290, 20),
 					                contentElement,
 					                FontStyle.BoldAndItalic);
 				y -= typeElem.rectTransform.sizeDelta.y;
-
-
 			}
 
-
+			//creation des element de texture
 			Text textElem = creerText("texture",
 				newCat[newCat.Length-1].TrimEnd(".mat".ToCharArray()),
 				new Vector3 (tab+20, y, 0),
