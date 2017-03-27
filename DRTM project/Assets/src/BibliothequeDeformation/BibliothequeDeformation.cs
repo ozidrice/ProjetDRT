@@ -68,7 +68,7 @@ public class BibliothequeDeformation : MonoBehaviour {
 			//Creation du clickable 
 			textElem.gameObject.AddComponent(typeof(Button));
 			textElem.GetComponent<Button>().onClick.AddListener(delegate{
-				script.deformer();
+				//script.deformer();
 			});
 	
 		}
