@@ -6,14 +6,18 @@ public class Deformation3D : DeformationAbstract{
 	override public void deformer(){
 		GameObject go = GameObject.Find ("modele");
 		MeshFilter[] childs = go.GetComponentsInChildren<MeshFilter>(false);
-		MeshFilter child = childs[Mathf.RoundToInt (Random.value * childs.Length)];
+		MeshFilter child = childs[0];
+		for(int i = 1; i<childs.Length; i++) {
+			if(child.mesh.vertices.Length<childs[i].mesh.vertices.Length)
+				child = childs[i];
+		}
 		Vector3 vRef = child.mesh.vertices[Mathf.RoundToInt(Random.value*child.mesh.vertices.Length)];
 
 		foreach (MeshFilter mf in childs) {
 			Mesh mesh = mf.mesh;
 			newVertices.AddRange( mesh.vertices );
 			for(int i = 0; i<newVertices.Count; i++){
-				float marge = 0.032f;
+				float marge = Random.value*0.2f;
 				if(estAProximité(marge, vRef,newVertices[i])){
 					newVertices [i] = calculerVecteur(vRef,marge,2f,newVertices[i]);
 				}
@@ -37,6 +41,10 @@ public class Deformation3D : DeformationAbstract{
 			}
 		}
 		return false;
+	}
+
+	override public string toString(){
+		return "Deformation3D";
 	}
 
 }

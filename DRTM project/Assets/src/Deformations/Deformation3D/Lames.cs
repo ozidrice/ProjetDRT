@@ -38,5 +38,8 @@ public class Lames : DeformationAbstract{
 		return false;
 	}
 
+	override public string toString(){
+		return "Lames";
+	}
 }
 

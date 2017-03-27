@@ -41,7 +41,6 @@ public class BibliothequeDeformation : MonoBehaviour {
 				j++;
 				}
 			}catch(System.IndexOutOfRangeException){
-
 			}
 			CategorieTexture = newCat;
 			for (int i = j ; i < CategorieTexture.Length - 1; i++) {
@@ -68,9 +67,42 @@ public class BibliothequeDeformation : MonoBehaviour {
 			//Creation du clickable 
 			textElem.gameObject.AddComponent(typeof(Button));
 			textElem.GetComponent<Button>().onClick.AddListener(delegate{
-				//script.deformer();
+				Debug.Log(textElem.text);
+				switch (textElem.text) {
+				case "grandissementRandom": 
+					try{
+						this.gameObject.GetComponent<AgrandissementRandom> ().deformer ();
+					}catch(System.NullReferenceException){
+						this.gameObject.AddComponent(typeof(AgrandissementRandom));
+						this.gameObject.GetComponent<AgrandissementRandom> ().deformer ();
+					}
+					break;
+				case "grandissementMorceau": 
+					try{
+						this.gameObject.GetComponent<AgrandissementMorceau> ().deformer ();
+					}catch(System.NullReferenceException){
+						this.gameObject.AddComponent(typeof(AgrandissementMorceau));
+						this.gameObject.GetComponent<AgrandissementMorceau> ().deformer ();
+					}
+					break;
+				case "Eclat":
+					try{
+						this.gameObject.GetComponent<Eclats> ().deformer ();
+					}catch(System.NullReferenceException){
+						this.gameObject.AddComponent(typeof(Eclats));
+						this.gameObject.GetComponent<Eclats> ().deformer ();
+					}
+					break;
+				case "Lame":
+					try{
+						this.gameObject.GetComponent<Lames> ().deformer ();
+					}catch(System.NullReferenceException){
+						this.gameObject.AddComponent(typeof(Lames));
+						this.gameObject.GetComponent<Lames> ().deformer ();
+					}
+					break;
+				}
 			});
-	
 		}
 	
 	}

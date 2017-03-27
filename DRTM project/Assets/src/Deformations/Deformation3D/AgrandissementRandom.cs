@@ -21,6 +21,11 @@ public class AgrandissementRandom : DeformationAbstract{
 			}
 			mesh.vertices = newVertices.ToArray();
 			newVertices = new List<Vector3>();
+
 		}
+	}
+
+	override public string toString(){
+		return "AgrandissementRandom";
 	}
 }

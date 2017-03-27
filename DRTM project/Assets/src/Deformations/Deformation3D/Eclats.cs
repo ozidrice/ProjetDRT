@@ -38,5 +38,9 @@ public class Eclats : DeformationAbstract{
 		return false;
 	}
 
+	override public string toString(){
+		return "Eclats";
+	}
+
 }
 

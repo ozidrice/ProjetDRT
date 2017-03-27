@@ -8,4 +8,5 @@ public abstract class DeformationAbstract : MonoBehaviour {
 	protected int[] newTriangles;
 
 	public abstract void deformer();
+	public abstract string toString();
 }

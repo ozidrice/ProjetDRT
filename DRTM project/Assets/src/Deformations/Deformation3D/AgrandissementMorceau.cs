@@ -39,5 +39,8 @@ public class AgrandissementMorceau : DeformationAbstract{
 		return false;
 	}
 
+	override public string toString(){
+		return "AgrandissementMorceau";
+	}
 }
 

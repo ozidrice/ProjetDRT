@@ -49,7 +49,7 @@ public class ChargementModels : MonoBehaviour {
 		if (modele == "Assets/Resources/Nedra.fbx") {
 			clone.transform.position = new Vector3 (215f, -2019f, 342f);
 			clone.transform.Rotate (new Vector3 (0f, 180f, 0f));
-			clone.transform.localScale = new Vector3 (1300f, 1300f, 1000f);
+			clone.transform.localScale = new Vector3 (1300f, 1300f, 1300f);
 		}
 
 		else if (modele == "Assets/Resources/head1Free_FBX.fbx") {
