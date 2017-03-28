@@ -31,10 +31,10 @@ using UnityEngine.UI;
  				Application.dataPath + "/screenshots",
  				"screen_1920x1080" + ".png",
  				"png");
-	 		var width = 450;
-     		var height = 500;
-     		var startX = 200;
-     		var startY = 200;
+	 		var width = 900;
+     		var height = 700;
+     		var startX = 0;
+     		var startY = 0;
      		var tex = new Texture2D(width,height,TextureFormat.RGB24,false);
      
     		tex.ReadPixels(new Rect(startX, startY, width, height), 0, 0);

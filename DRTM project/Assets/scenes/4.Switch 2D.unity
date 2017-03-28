@@ -821,7 +821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   captureWidth: 1920
   captureHeight: 1080
-  hideGameObject: {fileID: 1355290267}
+  hideGameObject: {fileID: 1542405490}
   format: 1
 --- !u!1 &1542405490
 GameObject:
