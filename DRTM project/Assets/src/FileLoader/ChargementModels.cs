@@ -50,6 +50,9 @@ public class ChargementModels : MonoBehaviour {
 			clone.transform.position = new Vector3 (215f, -2019f, 342f);
 			clone.transform.Rotate (new Vector3 (0f, 180f, 0f));
 			clone.transform.localScale = new Vector3 (1300f, 1300f, 1300f);
+			Destroy (GameObject.Find ("Nedra"));
+
+
 		}
 
 		else if (modele == "Assets/Resources/head1Free_FBX.fbx") {

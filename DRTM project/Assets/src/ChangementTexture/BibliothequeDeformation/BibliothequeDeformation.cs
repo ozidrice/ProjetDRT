@@ -93,6 +93,15 @@ public class BibliothequeDeformation : MonoBehaviour {
 						this.gameObject.GetComponent<Eclats> ().deformer ();
 					}
 					break;
+				case "grandissementLisse":
+					
+					try{
+						this.gameObject.GetComponent<AgrandissementLisse> ().deformer ();
+					}catch(System.NullReferenceException){
+						this.gameObject.AddComponent(typeof(AgrandissementLisse));
+						this.gameObject.GetComponent<AgrandissementLisse> ().deformer ();
+					}
+					break;
 				case "Lame":
 					try{
 						this.gameObject.GetComponent<Lames> ().deformer ();

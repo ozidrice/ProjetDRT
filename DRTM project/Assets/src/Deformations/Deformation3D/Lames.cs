@@ -6,8 +6,8 @@ public class Lames : DeformationAbstract{
 	override public void deformer(){
 		GameObject go = GameObject.Find ("modele");
 		MeshFilter[] childs = go.GetComponentsInChildren<MeshFilter>(false);
-		MeshFilter child = childs[Mathf.RoundToInt (Random.value * childs.Length)];
-		Vector3 vRef = child.mesh.vertices[Mathf.RoundToInt(Random.value*child.mesh.vertices.Length)];
+		MeshFilter child = childs[Mathf.RoundToInt (Random.value * (childs.Length-1))];
+		Vector3 vRef = child.mesh.vertices[Mathf.RoundToInt(Random.value*child.mesh.vertices.Length-1)];
 		foreach (MeshFilter mf in childs) {
 			Mesh mesh = mf.mesh;
 			newVertices.AddRange( mesh.vertices );
