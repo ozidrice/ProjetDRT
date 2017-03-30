@@ -1,14 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\src\SpriteLoader.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\src\Deformations\Deformation3D\AgrandissementMorceau.cs">
     <Files>
       <File FileName="Assets\src\Deformations\DeformationAbstract.cs" Line="1" Column="1" />
       <File FileName="Assets\src\Deformations\Deformation3D\AgrandissementRandom.cs" Line="1" Column="1" />
       <File FileName="Assets\src\Deformations\Deformation3D\Eclats.cs" Line="1" Column="1" />
       <File FileName="Assets\src\Deformations\Deformation3D\Lames.cs" Line="1" Column="1" />
-      <File FileName="Assets\src\Deformations\Deformation3D\AgrandissementMorceau.cs" Line="1" Column="1" />
+      <File FileName="Assets\src\Deformations\Deformation3D\AgrandissementMorceau.cs" Line="9" Column="80" />
       <File FileName="Assets\src\ChangementTexture\ChangementTexture.cs" Line="1" Column="1" />
-      <File FileName="Assets\src\SpriteLoader.cs" Line="19" Column="84" />
+      <File FileName="Assets\src\SpriteLoader.cs" Line="1" Column="1" />
+      <File FileName="Assets\src\Deformations\BibliothequeTexture\Bibliotheque.cs" Line="1" Column="1" />
+      <File FileName="Assets\src\Deformations\Deformation3D.cs" Line="1" Column="1" />
+      <File FileName="Assets\src\ChangementTexture\BibliothequeDeformation\BibliothequeDeformation.cs" Line="1" Column="1" />
+      <File FileName="Assets\src\Deformations\Deformation3D\AgrandissementLisse.cs" Line="1" Column="1" />
+      <File FileName="Assets\src\FileLoader\FileLoader.cs" Line="1" Column="1" />
+      <File FileName="Assets\src\FileLoader\ChargementModels.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

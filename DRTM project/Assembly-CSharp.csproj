@@ -53,6 +53,7 @@
      <Compile Include="Assets\src\ChangementTexture\TypeChangementTexture\ChangementTextureSelectionne.cs" />
      <Compile Include="Assets\src\Deformations\BibliothequeTexture\Bibliotheque.cs" />
      <Compile Include="Assets\src\Deformations\Deformation3D.cs" />
+     <Compile Include="Assets\src\Deformations\Deformation3D\AgrandissementLisse.cs" />
      <Compile Include="Assets\src\Deformations\Deformation3D\AgrandissementMorceau.cs" />
      <Compile Include="Assets\src\Deformations\Deformation3D\AgrandissementRandom.cs" />
      <Compile Include="Assets\src\Deformations\Deformation3D\Eclats.cs" />
