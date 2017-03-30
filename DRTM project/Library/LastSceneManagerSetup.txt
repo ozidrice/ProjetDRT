@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scene.unity
+- path: "Assets/scenes/0.Pr\xE9sentation.unity"
   isLoaded: 1
   isActive: 1

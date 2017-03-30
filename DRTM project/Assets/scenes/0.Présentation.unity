@@ -332,9 +332,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Bonjour, \nCette application a \xE9t\xE9 con\xE7ue par Tom Delguste, Yanis
-    Rida, Damien Trolard & Lorenso Mendes.\n\nSur cette derni\xE8re vous allez pouvoir
-    appliquer des textures, modifier et transformer en mod\xE8le 2D style cartoon
-    des mod\xE8les de visages 3D.\n\nAMUSEZ-VOUS !!!!"
+    Rida, Damien Trolard & Lorenso Mendes.\n\nElle va vous permettre d'appliquer des
+    textures, modifier et transformer en mod\xE8le 2D style cartoon des mod\xE8les
+    de visages 3D.\n\nAMUSEZ-VOUS !!!!"
 --- !u!222 &713477696
 CanvasRenderer:
   m_ObjectHideFlags: 0
